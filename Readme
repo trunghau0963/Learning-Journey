@@ -1,1 +1,86 @@
-Test
+﻿# AR Card Game with ZED Integration
+
+## Project Overview
+An augmented reality card game that combines mobile AR gameplay with a shared ZED display system, creating an immersive multiplayer experience in educational settings.
+
+## Core Features
+- **Multiplayer AR Card Game**: Support for 6 active players using mobile devices with Vuforia AR
+- **ZED Integration**: Real-time visualization of the game map and gameplay elements on a large display
+- **Spectator Mode**: Additional students can interact with game content through the ZED display
+- **Cross-Platform Interaction**: Seamless connection between mobile AR and ZED display
+
+## Technical Architecture
+
+### Game Components
+- **Mobile Client (Player)**
+  - Unity Game Engine
+  - Vuforia AR Framework
+  - Netcode for GameObjects (Networking)
+  - Custom UI/UX for card interactions
+
+- **ZED Display System**
+  - ZED SDK for 3D visualization
+  - Unity integration for game state rendering
+  - Real-time synchronization with game server
+
+- **Server Infrastructure**
+  - Netcode for GameObjects
+  - Game state management
+  - Player session handling
+  - Real-time data synchronization
+
+### Key Technologies
+- Unity (Game Engine)
+- Vuforia (AR Framework)
+- ZED SDK (3D Display)
+- Netcode for GameObjects (Networking)
+
+## Target Environment
+- **Players**: Mobile devices (iOS/Android) with AR capabilities
+- **Display**: ZED camera system with projector setup
+- **Network**: Local network for minimal latency
+
+## Game Flow
+1. Players join the game session using mobile devices
+2. Each player uses AR markers to interact with their cards
+3. Game state is synchronized across all devices
+4. ZED display shows the complete game state including:
+   - Game map
+   - Active cards
+   - Special effects
+   - Player actions
+5. Non-playing students can view and interact with displayed content
+
+## Future Enhancements
+- Advanced spectator interactions
+- Enhanced AR visualization
+- Additional game modes
+- Educational analytics integration
+
+## Setup Requirements
+- Unity 2022.x or later
+- Vuforia Engine
+- ZED SDK
+- Mobile devices with AR capabilities
+- ZED camera
+- Projection system
+
+## Package Installation Guide
+### Required Packages
+1. Access the package files from:
+   ```
+   https://studenthcmusedu-my.sharepoint.com/:f:/g/personal/21126063_student_hcmus_edu_vn/EvVvlD1PIJ9NkdDn5YO2FdABTr6opoLeDzM6N89zl2UYuw?e=8hHEMq
+   ```
+
+2. Package Installation Steps:
+   - Download and import the OpenCV package
+   - Download and import the MediaPipe package
+   - If needed, remove the old Vuforia package and install version 11.2.4
+
+Note: Make sure to import packages in the correct order to avoid dependency conflicts.
+
+## Todo
+- setting method ( wrapper cards, switch mode view port, R information of role)
+- visualize cards in ar map
+- implement interaction with handtracking 
+- visualize card in zed map 
