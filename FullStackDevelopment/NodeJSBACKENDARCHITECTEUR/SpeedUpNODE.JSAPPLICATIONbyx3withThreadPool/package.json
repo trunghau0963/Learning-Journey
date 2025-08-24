@@ -1,5 +1,5 @@
 {
-  "name": "firstproject",
+  "name": "speedupnode.jsapplicationbyx3withthreadpool",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -12,9 +12,8 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "bcrypt": "^6.0.0",
     "dotenv": "^17.2.1",
-    "express": "^5.1.0",
-    "mongoose": "^8.18.0",
-    "morgan": "^1.10.1"
+    "express": "^5.1.0"
   }
 }

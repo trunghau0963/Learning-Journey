@@ -1,0 +1,38 @@
+npm i express --save 
+
+Node.js is a runtime environment that enables developers to run JavaScript code on the server side. 
+Its event-driven, non-blocking I/O model allows for the efficient handling of multiple requests simultaneously. 
+However, as the number of requests increases, the event loop thread may become overwhelmed by blocking operations such as reading or writing to a file. 
+This is where the thread pool in Node.js comes in.
+
+⚙️ What is I/O in Node.js?
+I/O (Input/Output) refers to operations like:
+- Reading/writing files
+- Accessing databases
+- Making network requests
+- Compressing data
+- Encrypting/decrypting
+Node.js is designed to be non-blocking, meaning it can handle multiple I/O tasks without waiting for each one to finish before starting the next.
+
+🔄 How Node.js Handles I/O
+Node uses a system called libuv ( is writed by c++), which manages:
+- The event loop (for lightweight tasks)
+- A thread pool (for heavier tasks)
+Here’s how it works:
+- Simple tasks (like reading from memory) are handled directly in the event loop.
+- Heavy tasks (like reading large files or doing cryptography) are offloaded to the thread pool, so they don’t block the main thread.
+
+
+
+
+Network I/O operations on node.js runs on the main thread.
+
+Yes, node.js spawns four threads in addition to the main thread but none of them are used for network I/O such as database operations. The threads are:
+
+    DNS resolver (because most OS provide only synchronous API for this)
+
+    File system API (because this is messy to do asynchronously cross-platform)
+
+    Crypto (Because this uses the CPU)
+
+    Zlib (zip compression)

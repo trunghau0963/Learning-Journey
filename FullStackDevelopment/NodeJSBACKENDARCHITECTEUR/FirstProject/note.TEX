@@ -1,0 +1,71 @@
+\section{Introduction}
+This document provides an overview of the project structure and setup for the Node.js backend application.
+
+\section{Project Structure}
+\begin{verbatim}
+FirstProject/
+├── src/
+│   ├── app.js
+│   └── routes/
+├── server.js
+└── package.json
+\end{verbatim}
+
+\section{Setup}
+\begin{itemize}
+  \item Install dependencies: \texttt{npm install}
+  \item Start the server: \texttt{node server.js}
+\end{itemize}
+
+\section{Error Handling}
+The application includes error handling for unhandled promise rejections. This ensures that any unexpected errors are logged and the server can shut down gracefully.
+
+\section{Knowledge Base}
+The knowledge base for this project includes best practices for Node.js development, common error handling patterns, and guidelines for structuring Express applications.
+
+\subsection{Middleware}
+
+Middleware is a function that has access to the request object (\texttt{req}), the response object (\texttt{res}), and the next middleware function in the application’s request-response cycle. It can perform operations on the request and response objects, end the request-response cycle, or call the next middleware function.
+
+\begin{itemize}
+  \item \texttt{app.use()}: Mounts the middleware function at the specified path.
+  \item \texttt{next()}: Passes control to the next middleware function.
+
+  \item \textbf{Objective of middleware}
+
+    The objective of middleware is to provide a way to modify the request and response objects, end the request-response cycle, and call the next middleware function in the stack. Middleware functions can be used for a variety of purposes, including logging, authentication, and error handling.
+    The reason for using middleware is to separate concerns within the application, making it easier to manage and maintain the codebase.
+
+    \begin{itemize}
+        \item \textbf{Avantage} 
+            Middleware allows for a modular approach to handling requests, making it easier to manage and maintain code.
+            It promotes code reusability and separation of concerns.
+
+            reality example: Authentication middleware can be reused across different routes, ensuring consistent authentication logic throughout the application.
+
+    \end{itemize}
+
+
+  \item \textbf{1. Error Handling Middleware}
+
+  \item \textbf{2. Logging Middleware}
+
+  \item \textbf{3. Body Parsing Middleware}
+
+\end{itemize}
+
+\subsubsection{Morgan}
+\begin{verbatim}
+\texttt{npm i morgan --save-dev}
+\end{verbatim}
+
+morgan is a middleware for logging HTTP requests in Node.js applications. It simplifies the process of logging request details, such as the request method, URL, and response time, making it easier to monitor and debug applications.
+
+morgan has 5 type such as
+    \begin{itemize}
+        \item \texttt{dev}: Concise output colored by response status for development use.
+        \item \texttt{combined}: Standard Apache style output.
+        \item \texttt{common}: Concise output in the Apache common log format.
+        \item \texttt{short}: Shorter than \texttt{common}, also including response time.
+        \item \texttt{tiny}: The minimal output.
+    \end{itemize}

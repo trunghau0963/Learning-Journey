@@ -1,0 +1,66 @@
+=>ab -n 200 -c 100 http://localhost:3055/
+
+This is ApacheBench, Version 2.3 <$Revision: 1923142 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking localhost (be patient)
+Completed 100 requests
+Completed 200 requests
+Finished 200 requests
+
+
+Server Software:
+Server Hostname:        localhost
+Server Port:            3055
+
+Document Path:          /
+Document Length:        60 bytes
+
+Concurrency Level:      100
+Time taken for tests:   2.199 seconds
+Complete requests:      200
+Failed requests:        0
+Total transferred:      52000 bytes
+HTML transferred:       12000 bytes
+Requests per second:    90.96 [#/sec] (mean)
+Time per request:       1099.348 [ms] (mean)
+Time per request:       10.993 [ms] (mean, across all concurrent requests)
+Transfer rate:          23.10 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.4      0       4
+Processing:    47  812 340.8   1070    1078
+Waiting:       45  812 340.9   1070    1078
+Total:         47  812 340.8   1070    1078
+
+Percentage of the requests served within a certain time (ms)     
+  50%   1070
+  66%   1073
+  75%   1073
+  80%   1074
+  90%   1075
+  95%   1076
+  98%   1077
+  99%   1078
+ 100%   1078 (longest request)
+
+
+
+yx3withThreadPool> $env:UV_THREADPOOL_SIZE=28; node server.js
+Server is running on port 3055
+Hashing 4 done in 369 ms
+Hashing 5 done in 369 ms
+Hashing 6 done in 375 ms
+Hashing 1 done in 378 ms
+Hashing 2 done in 412 ms
+Hashing 3 done in 448 ms
+PS F:\Learning-Journey\FullStackDevelopment\NodeJSBACKENDARCHITECTEUR\SpeedUpNODE.JSAPPLICATIONbyx3withThreadPool> $env:UV_THREADPOOL_SIZE=1; node server.js 
+Server is running on port 3055
+Hashing 1 done in 345 ms
+Hashing 2 done in 694 ms
+Hashing 3 done in 1040 ms
+Hashing 4 done in 1383 ms
+Hashing 5 done in 1728 ms
+Hashing 6 done in 2070 ms
