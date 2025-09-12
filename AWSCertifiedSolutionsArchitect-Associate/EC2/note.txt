@@ -1,0 +1,28 @@
+Legion@Hou MINGW64 /f/Learning-Journey/AWSCertifiedSolutionsArchitect-Associate/EC2 (AWS-Certified-Solutions-Architect-–-Associate)
+$ ssh -i "123abc.pem" ec2-user@ec2-3-106-132-165.ap-southeast-2.compute.amazonaws.com
+The authenticity of host 'ec2-3-106-132-165.ap-southeast-2.compute.amazonaws.com (3.106.132.165)' can't be established.
+ED25519 key fingerprint is SHA256:Uor1rpE9kNrMIsLpuTry7XBH80H4aCGoZErcApWNNaI.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'ec2-3-106-132-165.ap-southeast-2.compute.amazonaws.com' (ED25519) to the list of known hosts.
+   ,     #_
+   ~\_  ####_        Amazon Linux 2023
+  ~~  \_#####\
+  ~~     \###|
+  ~~       \#/ ___   https://aws.amazon.com/linux/amazon-linux-2023
+   ~~       V~' '->
+    ~~~         /
+      ~~._.   _/
+         _/ _/
+       _/m/'
+[ec2-user@ip-172-31-23-88 ~]$
+
+----------------------
+
+[ec2-user@ip-172-31-23-88 ~]$ sudo yum update
+Amazon Linux 2023 Kernel Livepatch repository   177 kB/s |  19 kB     00:00
+Dependencies resolved.
+Nothing to do.
+Complete!
+[ec2-user@ip-172-31-23-88 ~]$
+
